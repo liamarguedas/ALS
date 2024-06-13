@@ -1,0 +1,22 @@
+{
+  "name": "als-web",
+  "version": "1.0.0",
+  "description": "als forum",
+  "main": "server.js",
+  "scripts": {
+    "test": "_"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liamarguedas/ALS.git"
+  },
+  "keywords": [
+    "als"
+  ],
+  "author": "Liam Arguedas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liamarguedas/ALS/issues"
+  },
+  "homepage": "https://github.com/liamarguedas/ALS#readme"
+}
