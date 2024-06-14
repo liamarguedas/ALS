@@ -1,0 +1,78 @@
+/* Define custom properties for colors */
+:root {
+  --navbar-bg-color: #333; /* Background color of the navbar */
+  --navbar-text-color: #fff; /* Text color of the navbar links */
+  --navbar-text-hover-color: #ffd700; /* Text color on hover */
+  --header-bg-color: #444; /* Background color of the header */
+  --header-text-color: #fff; /* Text color of the header */
+  --header-height: 60px; /* Height of the header */
+}
+
+/* General reset and styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
+header {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  text-align: center;
+  padding: 10px;
+  height: var(--header-height);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Navbar styling */
+nav {
+  background-color: var(--navbar-bg-color);
+  text-align: center;
+}
+
+nav a {
+  color: var(--navbar-text-color);
+  text-decoration: none;
+  padding: 14px 20px;
+  display: inline-block;
+}
+
+nav a:hover {
+  color: var(--navbar-text-hover-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    padding: 10px;
+    margin: 5px;
+  }
+}
+
+/* Login/Register button styling */
+#login-btn,
+#register-btn {
+  background-color: #007bff; /* Blue color for buttons */
+  color: #fff;
+  padding: 14px 20px;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+#login-btn:hover,
+#register-btn:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}

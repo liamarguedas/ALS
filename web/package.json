@@ -1,5 +1,6 @@
 {
   "name": "als-web",
+  "type": "module",
   "version": "1.0.0",
   "description": "als forum",
   "main": "server.js",
@@ -18,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/liamarguedas/ALS/issues"
   },
-  "homepage": "https://github.com/liamarguedas/ALS#readme"
+  "homepage": "https://github.com/liamarguedas/ALS#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.3",
+    "pg": "^8.12.0"
+  }
 }
