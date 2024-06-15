@@ -133,14 +133,19 @@ button:hover .arrow:before {
   height: 93vh;
   width: 100vw;
   display: flex;
+  flex-direction: row;
+}
+
+.als-servers-container {
+  height: 300px;
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.grid-container {
-  background-color: red;
+.servers-table {
+  height: 200px;
   width: 1150px;
-  height: 100%;
-  gap: 10px;
-  grid-template-columns: 330px, 820px;
+  background-color: var(--header-bg-color);
 }
