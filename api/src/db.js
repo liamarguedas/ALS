@@ -1,11 +1,11 @@
-import pg from "pg";
 
-export default class databaseApi {
-  constructor(_db = "___") {
-    this.db = _db;
+export default class Database {
+  constructor(_db = "./tbd") {
+    this.db = new sqlite3.Database(_db);
   }
 
-  insertData(id, args, table) {
-    this.db.run();
+createTable(){
+    this.db.serialize(() = {
+    this.db.run("CREATE TABLE IF NOT EXISTS _ (_, _, _, _,)");
+    })
   }
-}
