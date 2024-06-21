@@ -1,7 +1,9 @@
 
 export default class Database {
-  constructor(_db = "./tbd") {
-    this.db = new sqlite3.Database(_db);
+  constructor(db) {
+    
+    this.db = );
+  
   }
 
 createTable(){
@@ -22,4 +24,9 @@ insertData(id, title, tweet) {
         console.log("Row was added to the table");
       },
     );
+  }
+
+
+function callDb(db){
+    switch
   }
