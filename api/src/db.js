@@ -28,5 +28,14 @@ insertData(id, title, tweet) {
 
 
 function callDb(db){
-    switch
+    
+  switch(db) {
+
+  case "als":
+    break;
+  case "sourcebans":
+    break;
+  case "sourcebans":
+  default:
+}
   }
