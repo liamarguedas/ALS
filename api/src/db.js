@@ -35,7 +35,9 @@ function callDb(db){
     break;
   case "sourcebans":
     break;
-  case "sourcebans":
+  case "stats":
+      break;
   default:
+      break;
 }
   }
