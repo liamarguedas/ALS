@@ -2,7 +2,7 @@
 export default class Database {
   constructor(db) {
     
-    this.db = );
+    this.db = callDb(db);
   
   }
 
@@ -32,12 +32,13 @@ function callDb(db){
   switch(db) {
 
   case "als":
-    break;
+      return ;// TODO
   case "sourcebans":
-    break;
+      return ;// TODO
   case "stats":
-      break;
+      return ;// TODO
   default:
+      return ;// TODO
       break;
 }
   }
