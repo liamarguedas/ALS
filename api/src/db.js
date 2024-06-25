@@ -1,44 +1,36 @@
-
+// POSTGREE DB
 export default class Database {
-  constructor(db) {
-    
-    this.db = callDb(db);
-  
+  consturctor(db) {
+    this.db = connectDB(db);
   }
 
-createTable(){
-    this.db.serialize(() = {
-    this.db.run("CREATE TABLE IF NOT EXISTS _ (_, _, _, _,)")
-    })
+  createTable(tableName, values) {
+    // tableName:  String
+    // values: Array (column name, column type, any other arguments *)
+
+    this.db.serialize(() => {
+      const query = "CREATE TABLE IF NOT EXISTS $1 ($2)";
+      const queryValues = [tableName, values];
+
+      this.db.run(query, queryValues);
+    });
+    return;
   }
-
-
-insertData(id, title, tweet) {
-    this.db.run(
-      "INSERT INTO ___(_,_,_) VALUES (?, ?, ?)",
-      [],
-      (err) => {
-        if (err) {
-          return console.log(err.message);
-        }
-        console.log("Row was added to the table");
-      },
-    );
-  }
-
-
-function callDb(db){
-    
-  switch(db) {
-
-  case "als":
-      return ;// TODO
-  case "sourcebans":
-      return ;// TODO
-  case "stats":
-      return ;// TODO
-  default:
-      return ;// TODO
-      break;
 }
+
+// FUNCTION TO CREATE CONNECTION TO DATABSE
+function connectDB(db) {
+  switch (db) {
+    case "sourcebans":
+      return; //todo
+
+    case "hlstats":
+      return; //todo
+
+    case "web":
+      return;
+
+    default:
+      return; // returns null value itself
   }
+}
