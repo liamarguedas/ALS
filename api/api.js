@@ -11,5 +11,5 @@ api.get("/", (req, res) => {
 });
 
 api.listen(port, () => {
-  console.log("FUNCIONANDOOOOOO");
+  console.log("_");
 });
