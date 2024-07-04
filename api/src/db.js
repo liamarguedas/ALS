@@ -1,7 +1,7 @@
 import pool from "./cur/cursor.js";
 
-export default class dbFunctions {
-  consturctor(table) {
+export default class connect {
+  constructor(table) {
     this.table = table;
   }
 
@@ -10,6 +10,7 @@ export default class dbFunctions {
 
     try {
       conn = await pool.getConnection();
+      console.log(this.table);
       const result = await conn.query(`SELECT * FROM ${this.table}`);
       return result;
     } catch (err) {
