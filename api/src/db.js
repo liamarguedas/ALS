@@ -1,6 +1,7 @@
-export default class Database {
-  consturctor(db, table) {
-    this.pool = db;
+import pool from "./cur/cursor.js";
+
+export default class dbFunctions {
+  consturctor(table) {
     this.table = table;
   }
 
@@ -8,7 +9,7 @@ export default class Database {
     let conn;
 
     try {
-      conn = await this.pool.getConnection();
+      conn = await pool.getConnection();
       const result = await conn.query(`SELECT * FROM ${this.table}`);
       return result;
     } catch (err) {
@@ -19,27 +20,35 @@ export default class Database {
     }
   }
 
-  selectDataColumn(column) {
-    this.db.serialize(() => {
-      const query = "SELECT $1 FROM $2";
-      const queryValues = [column, this.table];
+  async selectDataColumn(column) {
+    let conn;
 
-      const result = this.db.run(query, queryValues);
+    try {
+      conn = await pool.getConnection();
+      const query = `SELECT ${column} FROM ${this.table}`;
+      const result = await conn.query(query);
       return result;
-    });
+    } catch (err) {
+      console.error("Erro ao executar o query");
+      throw err;
+    } finally {
+      if (conn) conn.release();
+    }
   }
 
-  filterRow(column, value) {
-    this.db.serialize(() => {
-      const query = "SELECT $1 FROM $2 WHERE $3 = $4";
-      const queryValues = [column, this.table, column, value];
+  async filterRow(column, value) {
+    let conn;
 
-      const result = this.db.run(query, queryValues);
+    try {
+      conn = await pool.getConnection();
+      const query = `SELECT ${column} FROM ${this.table} WHERE ${column} = ?`;
+      const result = await conn.query(query, [value]);
       return result;
-    });
-  }
-
-  closeDb() {
-    this.db.close();
+    } catch (err) {
+      console.error("Erro ao executar o query");
+      throw err;
+    } finally {
+      if (conn) conn.release();
+    }
   }
 }

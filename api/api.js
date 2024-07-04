@@ -1,17 +1,18 @@
-import dbConnection from "./cur/cursor.js";
+import connect from "./src/db.js";
 import express from "express";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 
 const api = express();
 const port = 3000; // change in client !!!!
 
-const sourcebans = "";
-const rankme = "";
+const rankme = new connect("rankme");
 
-api.get("/", (req, res) => {
-  res.send("_");
+api.get("/", async (req, res) => {
+  const data = await rankme.selectData();
+  console.log(data);
+  res.send("hello wouuuurld");
 });
 
 api.listen(port, () => {
-  console.log("_");
+  console.log("API runnning");
 });

@@ -1,11 +1,13 @@
 import mariadb from "mariadb";
 
-export default function dbConnection() {
-  return mariadb.createPool({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "ALS_TEST",
-    connectionLimit: 5,
-  });
-}
+const pool = new mariadb.createPool({
+  host: "localhost",
+  user: "root",
+  password: "1518",
+  database: "ALS_TEST",
+  connectionLimit: 5,
+});
+
+console.log(pool);
+
+export default pool;
