@@ -8,6 +8,4 @@ const pool = new mariadb.createPool({
   connectionLimit: 5,
 });
 
-console.log(pool);
-
 export default pool;
