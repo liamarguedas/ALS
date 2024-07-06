@@ -13,6 +13,18 @@ api.get("/", async (req, res) => {
   res.json(data);
 });
 
+api.get("/filter/:column", async (req, res) => {
+  const result = await rankme.selectDataColumn(req.params.column);
+
+  res.json(result);
+});
+
+api.get("/user/:steamid", async (req, res) => {
+  const result = await rankme.filterRow("steam", req.params.steamid, false);
+
+  res.json(result);
+});
+
 api.listen(port, () => {
   console.log("API runnning");
 });
